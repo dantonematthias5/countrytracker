@@ -1,0 +1,58 @@
+/* Parchment palette: overrides the dark theme variables */
+:root {
+  --bg: #e7d8b4;
+  --bg-panel: #efe3c4;
+  --bg-card: #f3e9cd;
+  --border: #9a7b4f;
+  --border-soft: #c9b78c;
+  --text: #3b2a17;
+  --text-muted: #7a6446;
+  --gold: #a8741a;
+  --gold-bright: #8b2e22;
+  --red: #8b2e22;
+  --shadow: rgba(59, 42, 23, 0.35);
+}
+.btn-primary { color: #fff8e6; }
+.world-map-section { display: none; }
+
+/* Lock screen shown until the login succeeds */
+#login { display: none; min-height: 100vh; align-items: center; justify-content: center; padding: 24px; }
+body.locked #login { display: flex; }
+body.locked > *:not(#login) { display: none !important; }
+.login-card {
+  width: 100%; max-width: 380px; padding: 36px 30px; text-align: center;
+  background: var(--bg-panel); border: 3px double var(--border); border-radius: 6px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+.login-card h1 { font-size: 34px; margin: 6px 0 4px; }
+.login-card p { color: var(--text-muted); font-size: 13px; margin: 0 0 20px; }
+.login-card input { width: 100%; padding: 11px 12px; margin-bottom: 12px; font-size: 14px; }
+.login-card .btn { width: 100%; justify-content: center; }
+.login-error { color: var(--red); font-size: 13px; margin: 0 0 12px; }
+.login-error[hidden] { display: none; }
+
+/* Top navigation bar */
+.navbar {
+  position: sticky; top: 0; z-index: 40; display: flex; gap: 22px; align-items: center;
+  padding: 10px 24px; background: var(--bg-panel); border-bottom: 1px solid var(--border);
+}
+.navbar a { color: var(--text); text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+.navbar a:hover { color: var(--gold-bright); }
+.navbar button { margin-left: auto; }
+
+/* Globe homepage */
+.hero { max-width: 1080px; margin: 0 auto; padding: 28px 24px 0; text-align: center; }
+.hero h2 { font-size: 38px; font-weight: 600; }
+.globe-box { height: min(68vh, 640px); cursor: grab; }
+.globe-box canvas { outline: none; }
+
+/* Passport-style exploration bar */
+.passport {
+  max-width: 640px; margin: 10px auto 30px; padding: 16px 20px;
+  background: var(--bg-card); border: 3px double var(--border); border-radius: 4px;
+}
+.passport-head { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-display); font-size: 18px; }
+.passport-head strong { font-size: 30px; color: var(--gold-bright); }
+.passport-track { height: 14px; margin: 8px 0; border: 1px solid var(--border); border-radius: 2px; background: var(--bg); overflow: hidden; }
+.passport-fill { height: 100%; width: 0; background: var(--gold-bright); transition: width 0.6s ease; }
+.passport p { margin: 0; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
